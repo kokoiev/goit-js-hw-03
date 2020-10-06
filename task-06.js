@@ -6,15 +6,12 @@ const products = [
   { name: "Захват", price: 1200, quantity: 2 },
 ];
 
-// console.log(products[0].name);
-const calculateTotalPrice = function (allProdcuts, productName) {
+const calculateTotalPrice = function (allProducts, productName) {
   let totalPrice = 0;
-  for (let i = 0; i < allProdcuts.length; i++) {
-    const product = allProdcuts[i];
-    // console.log(allProdcuts[i]);
+  for (let i = 0; i < allProducts.length; i++) {
+    const product = allProducts[i];
     const values = Object.values(product);
     for (const value of values) {
-      //   console.log(value);
       if (value === productName) {
         totalPrice = product.price * product.quantity;
         break;

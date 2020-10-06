@@ -6,15 +6,10 @@ const user = {
 };
 
 user.mood = `happy`;
-console.table(user);
 
 user.hobby = "skydiving";
-console.table(user);
 
 user.premium = false;
-console.table(user);
-
-console.log(Object.keys(user));
 
 const entries = Object.entries(user);
 console.log(entries);

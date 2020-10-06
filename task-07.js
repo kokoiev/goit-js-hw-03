@@ -26,7 +26,6 @@ const account = {
     const newTransaction = {};
     newTransaction.amount = amount;
     newTransaction.type = type;
-    // console.table(newTransaction);
     if (type === "deposit") {
       this.balance += amount;
     } else {
@@ -42,10 +41,7 @@ const account = {
    * после чего добавляет его в историю транзакций
    */
   deposit(amount) {
-    // this.balance += amount;
-
     this.transactions.push(this.createTransaction(amount, "deposit"));
-    // console.log(this.balance);
   },
 
   /*
@@ -59,9 +55,7 @@ const account = {
    */
   withdraw(amount) {
     if (this.balance > amount) {
-      //   this.balance -= amount;
       this.transactions.push(this.createTransaction(amount, "withdraw"));
-      //   console.log(this.balance);
     } else {
       alert`No BABOSSO`;
     }
@@ -86,15 +80,9 @@ const account = {
    */
   getTransactionTotal(type) {
     let total = 0;
-    // console.log(total);
-    // console.table(this.transactions);
-    // console.log(this.transactions.length);
     for (let i = 0; i < this.transactions.length; i++) {
       let newArr = {};
       newArr = this.transactions[i];
-      //   console.log(newArr);
-      //   console.table(newArr.amount);
-      //   console.log(newArr.type);
       if (newArr.type === type) {
         total += newArr.amount;
       }
@@ -102,17 +90,12 @@ const account = {
     return total;
   },
 };
-// console.log(account);
 account.createTransaction(3000, `deposit`);
 account.deposit(1000);
 account.withdraw(500);
-// console.log(account.transactions);
 account.deposit(8000);
 account.deposit(500);
 account.withdraw(250);
-// console.table(account.transactions);
 account.getTransactionTotal("deposit");
 console.log(account.getTransactionTotal("deposit"));
-// console.log(account.balance);
-// console.log(account.transactions);
 console.log(account.getTransactionTotal("withdraw"));

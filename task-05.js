@@ -9,25 +9,18 @@ const products = [
 
 const getAllPropValues = function (arr, prop) {
   const allProp = [];
-  // console.log(prop);
 
   for (let i = 0; i < arr.length; i++) {
     const newArr = arr[i];
-    // console.log(newArr);
+
     for (const key in newArr) {
-      // console.log(key);
-      // console.log(newArr[key]);
       if (key === prop) {
-        // console.log(newArr[key]);
         allProp.push(newArr[key]);
       }
     }
   }
-  // console.log(allProp);
   return allProp;
 };
-// console.log(products[0].name);
-// getAllPropValues(products, "name");
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
